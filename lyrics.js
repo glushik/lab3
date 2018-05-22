@@ -2,7 +2,7 @@ function showLyrics( name ){
     $.ajax({
         url: "./src/lyrics/"+name+".txt",
         crossDomain: true,
-        contentType: "text/html;charset=windows-1251",
+        contentType: "text/html;charset=utf-8",
         success: function(data){
             $(".name").removeClass("hidden");
             $(".name").addClass("poem");
