@@ -22,7 +22,8 @@ function show (name, data){
     $(select).addClass("poem");
     // $(select).text(data);
     for (var str in data){
-        $(select).append("<div>"+str+"</div>");
+        console.log(str);
+        $(select).append("<p class = 'evr'>"+str+"</p>");
     }
 }
 function oleg(){
