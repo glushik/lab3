@@ -22,6 +22,7 @@ function show (name, data){
     $(select).addClass("poem");
     var i = 0;
     var str = "";
+    var res = "";
     while (i<data.length){
         str  = "";
         while (data[i]!="#"){
@@ -29,8 +30,9 @@ function show (name, data){
             i++;
         }
         i++;
-        $(select).append("<p class = 'evr'>"+str+"</p>");
+        res += str + "\n";
     }
+    $(select).text(res);
     // for (var str in data){
     //     console.log(str);
     //     $(select).append("<p class = 'evr'>"+str+"</p>");
