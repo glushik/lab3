@@ -9,17 +9,20 @@ function showLyrics( name ){
             console.log(data);
         }
     })
-    
+    // show("happiness", "lollosdfjksdjfknsdf\nsdf,sbdfbsdf,nsdfsl\nsdf,hsdkfjblfjsdf");
+
     oleg();
 
 }
 
 function show (name, data){
     var select = "#"+name.toString();
+    console.log(data);
     $(select).removeClass("hidden");
     $(select).addClass("poem");
+    $(select).text(data);
     for (str in data){
-        $("select").append("<p>"+str+"</p>");
+        $(select).append("<p>"+str+"</p>");
     }
 }
 function oleg(){
