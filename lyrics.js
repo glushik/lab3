@@ -1,13 +1,13 @@
 function showLyrics( name ){
-    // $.ajax({
-    //     url: "./src/lyrics/"+name+".txt",
-    //     crossDomain: true,
-    //     success: function(data){
-    //         $(name).removeClass("hidden");
-    //         $(name).addClass("poem");
-    //         $(name).text(data);
-    //     }
-    // })
+    $.ajax({
+        url: "./src/lyrics/"+name+".txt",
+        crossDomain: true,
+        success: function(data){
+            $(name).removeClass("hidden");
+            $(name).addClass("poem");
+            $(name).text(data);
+        }
+    })
     console.log(document.body.clientWidth);
     oleg();
 
