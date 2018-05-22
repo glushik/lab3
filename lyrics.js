@@ -21,8 +21,8 @@ function show (name, data){
     $(select).removeClass("hidden");
     $(select).addClass("poem");
     // $(select).text(data);
-    for (str in data){
-        $(select).append("<p>"+str+"</p>");
+    for (var str in data){
+        $(select).append("<div>"+str+"</div>");
     }
 }
 function oleg(){
