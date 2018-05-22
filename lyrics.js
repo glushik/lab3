@@ -4,9 +4,8 @@ function showLyrics( name ){
         crossDomain: true,
         contentType: "text/html;charset=utf-8",
         success: function(data){
-            $(".name").removeClass("hidden");
-            $(".name").addClass("poem");
-            $(".name").text(data);
+
+            show (name, data)
             console.log(data);
         }
     })
@@ -15,7 +14,14 @@ function showLyrics( name ){
 
 }
 
-
+function show (name, data){
+    var select = "#"+name.toString();
+    $(select).removeClass("hidden");
+    $(select).addClass("poem");
+    for (str in data){
+        $("select").append("<p>"+str+"</p>");
+    }
+}
 function oleg(){
     document.getElementById("loleg").classList.remove("hidden");
     animate(function(timePassed){
