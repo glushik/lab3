@@ -6,7 +6,7 @@ function showLyrics( name ){
         success: function(data){
 
             show (name, data)
-            console.log(data);
+            // console.log(data);
         }
     })
     // show("happiness", "lollosdfjksdjfknsdf\nsdf,sbdfbsdf,nsdfsl\nsdf,hsdkfjblfjsdf");
@@ -20,7 +20,7 @@ function show (name, data){
     console.log(data);
     $(select).removeClass("hidden");
     $(select).addClass("poem");
-    $(select).text(data);
+    // $(select).text(data);
     for (str in data){
         $(select).append("<p>"+str+"</p>");
     }
