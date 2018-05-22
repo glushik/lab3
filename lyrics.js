@@ -20,11 +20,21 @@ function show (name, data){
     console.log(data);
     $(select).removeClass("hidden");
     $(select).addClass("poem");
-    // $(select).text(data);
-    for (var str in data){
-        console.log(str);
+    var i = 0;
+    var str = "";
+    while (i<data.length){
+        str  = "";
+        while (data[i]!="#"){
+            str +=data[i];
+            i++;
+        }
+        i++;
         $(select).append("<p class = 'evr'>"+str+"</p>");
     }
+    // for (var str in data){
+    //     console.log(str);
+    //     $(select).append("<p class = 'evr'>"+str+"</p>");
+    // }
 }
 function oleg(){
     document.getElementById("loleg").classList.remove("hidden");
