@@ -6,9 +6,10 @@ function showLyrics( name ){
             $(name).removeClass("hidden");
             $(name).addClass("poem");
             $(name).text(data);
+            console.log(data);
         }
     })
-    console.log(document.body.clientWidth);
+    
     oleg();
 
 }
