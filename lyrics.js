@@ -1,4 +1,5 @@
 function showLyrics( name ){
+
     $.ajax({
         url: "./src/lyrics/"+name+".txt",
         crossDomain: true,
@@ -20,8 +21,9 @@ function show (name, data){
     console.log(data);
     $(select).removeClass("hidden");
     $(select).addClass("poem");
-    
+    data.replace("#","\n");
     $(select).text(data);
+
     // for (var str in data){
     //     console.log(str);
     //     $(select).append("<p class = 'evr'>"+str+"</p>");
