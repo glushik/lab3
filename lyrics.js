@@ -10,7 +10,7 @@ function showLyrics( name ){
             // console.log(data);
         }
     })
-    // show("happiness", "lollosdfjksdjfknsdf\nsdf,sbdfbsdf,nsdfsl\nsdf,hsdkfjblfjsdf");
+    //  show("happiness", "lollosdfjk#sdjfknsdf\nsdf,#sbdfbsdf,ns#dfsl\nsdf,h#sdkfjblfjsdf");
 
     oleg();
 
@@ -18,11 +18,12 @@ function showLyrics( name ){
 
 function show (name, data){
     var select = "#"+name.toString();
-    console.log(data);
     $(select).removeClass("hidden");
     $(select).addClass("poem");
-    data.replace("#","\n");
-    $(select).text(data);
+    data=data.split("#").join("<br />");
+    // console.log(data);
+
+    $(select).html(data);
 
     // for (var str in data){
     //     console.log(str);
