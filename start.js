@@ -15,5 +15,5 @@ function showVideo(){
     })
 }
 function show(){
-    $(".video").append("video")
+    $(".video").append(data);
 }
