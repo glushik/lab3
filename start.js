@@ -16,5 +16,5 @@ function showVideo(){
     })
 }
 function show(data){
-    data.appendTo($(".video"));
+    alert(video.toSource());
 }
