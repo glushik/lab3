@@ -26,9 +26,9 @@ function showJSON(){
             var first = data.songs[0];
             var three = data.songs[2];
             var second = data.songs[1];
-            $("f_n").html(first.name);
-            $("f_r").html(first.ref);
-            $("f_d").html(first.year);
+            $("#f_n").html(first.name);
+            $("#f_r").html(first.ref);
+            $("#f_d").html(first.year);
             console.log(data);
             // console.log(data);
         }
