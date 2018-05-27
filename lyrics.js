@@ -15,7 +15,7 @@ function showLyrics( name ){
     oleg();
 
 }
-showJSON()
+showJSON();
 function showJSON(){
     $.ajax({
         url: "./src/songs.json",
