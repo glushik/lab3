@@ -20,7 +20,7 @@ function showJSON(){
     $.ajax({
         url: "./src/songs.json",
         crossDomain: true,
-        contentType: "json",
+        contentType: "application/json",
         success: function(data){
 
             console.log(data);
