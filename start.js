@@ -10,10 +10,11 @@ function showVideo(){
         success: function(data){
 
             
-             console.log(data);
+             console.log("loKl");
+             show(data);
         }
     })
 }
-function show(){
+function show(data){
     $(".video").append(data);
 }
