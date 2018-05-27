@@ -1,7 +1,7 @@
 function scroll_to_top(){
     $("html,body").animate({"scrollTop":0}, 650);
 }
-showVideo();
+// showVideo();
 function showVideo(){
     $.ajax({
         url: "./nino.mp4",
