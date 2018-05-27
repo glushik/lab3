@@ -1,0 +1,25 @@
+{
+  "songs": [
+    {
+      "1": {
+        "ref": "https://www.youtube.com/watch?v=n8fUyiMAPJw",
+        "year": 2015,
+        "name": "Счастье"
+      }
+    },
+    {
+      "2": {
+        "ref": "https://www.youtube.com/watch?v=YvFwjiJPVEA",
+        "year": 2014,
+        "name": "Волчица"
+      }
+    },
+    {
+      "3": {
+        "ref": "https://www.youtube.com/watch?v=TVxFtpHM3IE",
+        "year": 2017,
+        "name": "Нино"
+      }
+    }
+  ]
+}
