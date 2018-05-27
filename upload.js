@@ -57,10 +57,12 @@ function bestSong(){
     for (var i = 0; i < radio.length; ++i){
         if (radio[i].checked)  result = radio[i].value;
     }
-    
+    var year = document.getElementById("birth").value;
+    console.log(year);
     var obj = {
         email: document.getElementById("email").value,
-        song: result
+        song: result,
+        birth: year
     };
     localStorage.setItem(document.getElementById("email").value, JSON.stringify(obj));
     //console.log(document.getElementById("email").value);
@@ -69,10 +71,112 @@ function bestSong(){
 }
 
 function showSong(){
+
     var email = document.getElementById("checkemail").value;
+    if (JSON.parse(localStorage.getItem(email)).song != undefined){
+        var r = new Date(JSON.parse(localStorage.getItem(email)).birth);
+        var let = (new Date().getTime() - r) / (24 * 3600 * 365.25 * 1000);
+        //var let = (new Date() - r );
+        //console.log(let/60/60/24/365);
+        alert(
+            "Вам " + Math.floor(let) + " лет и вы слушаете Виника????!!!!\n"+JSON.parse(localStorage.getItem(email)).song+" - это ваша любимая песня");
+            return false;
+        } 
     console.log(email);
-    alert(JSON.parse(localStorage.getItem(email)).song+" - это ваша любимая песня");
+    alert("У вас нет любимой песни Виника, сердечно поздравляю");
     return false;
 }
 
+
+
+
+
+///////////////////////////////////////
+function log(html) {
+    document.getElementById('log').innerHTML = html;
+  }
+
+  document.forms.upload.onsubmit = function() {
+    var file = this.elements.myfile.files[0];
+    if (file) {
+      upload(file);
+    }
+    return false;
+  }
+
+
+  function upload(file) {
+
+    var xhr = new XMLHttpRequest();
+
+    // обработчики можно объединить в один,
+    // если status == 200, то это успех, иначе ошибка
+    xhr.onload = xhr.onerror = function() {
+      if (this.status == 200) {
+        log("success");
+      } else {
+        log("error " + this.status);
+      }
+    };
+
+    // обработчик для закачки
+    xhr.upload.onprogress = function(event) {
+      log(event.loaded + ' / ' + event.total);
+    }
+
+    xhr.open("POST", "upload", true);
+    xhr.send(file);
+
+  }
+
+
+
+
+
+
+
+
+///////////////////////////////////
+var ball = document.getElementById('clock');
+
+
+ball.onmousedown = function(e) {
+
+  var coords = getCoords(ball);
+  var shiftX = e.pageX - coords.left;
+  var shiftY = e.pageY - coords.top;
+
+  ball.style.position = 'absolute';
+  document.body.appendChild(ball);
+  moveAt(e);
+
+  ball.style.zIndex = 1000; // над другими элементами
+
+  function moveAt(e) {
+    ball.style.left = e.pageX - shiftX + 'px';
+    ball.style.top = e.pageY - shiftY + 'px';
+  }
+
+  document.onmousemove = function(e) {
+    moveAt(e);
+  };
+
+  ball.onmouseup = function() {
+    document.onmousemove = null;
+    ball.onmouseup = null;
+  };
+
+}
+
+ball.ondragstart = function() {
+  return false;
+};
+
+function getCoords(elem) {   // кроме IE8-
+  var box = elem.getBoundingClientRect();
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+}
 

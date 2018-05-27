@@ -22,7 +22,6 @@ function showJSON(){
         crossDomain: true,
         contentType: "application/json",
         success: function(data){
-
             data = JSON.parse(data);
             console.log(data);
             $("#f_n").html(first.name);

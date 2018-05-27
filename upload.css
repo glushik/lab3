@@ -2,6 +2,7 @@ body{
     /* background: azure; */
     top:0;
     margin: 0;
+    margin-bottom: 50px;
 }
 header{
     position: relative;
@@ -141,6 +142,17 @@ input{
 .js-line-range{
     width: 200px
 }
-
-
-
+.fav div{
+    display: block;
+    /* flex-direction: row; */
+}
+.left{
+    margin-left: 100px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+#ball{
+    margin-left: 250px;
+}

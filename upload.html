@@ -6,7 +6,6 @@
     <title>Винник - пісні</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="upload.css" />
-    <script src="upload.js"></script>
     <script src="clock.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -50,32 +49,46 @@
             </div>
             <canvas class="js-paint  paint-canvas" width="250px" height="250px"></canvas>
         </div>
-        <div>
+        <div class="flex-row ">
+        <div class = "flex">
             <form class = "sent" onsubmit="return bestSong();">
  
                 <div>Ваш e-mail:<input type =  "email" id = "email"></div>
                 <!-- <div>Ваш логин:<input type = "text"></div> -->
-                <div>Дата рождения<input type="date" name = "birth"></div>
+                <div>Дата рождения<input type="date" id = "birth"></div>
 
-                <div>Ваша любимая песни Винника:
-                    <p><input type = "radio" name ="song" value = "Счастье">Счастье</p>
-                    <p><input type = "radio" name ="song" value = "Нино">Нино</p>
-                    <p><input type = "radio" name ="song" value = "Волчица">Волчица</p>
+                <div class="fav">Ваша любимая песня Винника:</div>
+                <div>
+                    <div><input type = "radio" name ="song" value = "Счастье">Счастье</div>
+                    <div><input type = "radio" name ="song" value = "Нино">Нино</div>
+                    <div><input type = "radio" name ="song" value = "Волчица">Волчица</div>
                 </div>
                 <input type = "submit" value = "сохранить">
             </form>
         </div>
-        <div>
+        <div class = "left">
             <form class = "sent" onsubmit="return showSong();">
                 <div>Посмотреть любимую свою песню</div>
                 <div>Ваш e-mail: <input type="email" id = "checkemail"></div>
                 <input type = "submit" value = "Посмотреть">
             </form>
         </div>
+        </div>
+        <div>
+            <form name="upload">
+                <input type="file" name="myfile">
+                <input type="submit" value="Загрузить">
+            </form>
+            <div id="log">Прогресс загрузки</div>
+        </div>
     </div>
-    <canvas id = "clock" width=150 height=150></canvas>
-    <script src="draw.js"></script>
+
     
+    <canvas id = "clock" width=150 height=150 class="draggable"></canvas>
+    <script src="draw.js"></script>
+    <!-- <img src = "https://js.cx/clipart/ball.svg" id ="ball"> -->
+    <script src="upload.js"></script>
+
 </body>
 </html>
 
