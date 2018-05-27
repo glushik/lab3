@@ -16,5 +16,5 @@ function showVideo(){
     })
 }
 function show(data){
-    alert(type(data));
+    alert(typeof data);
 }
