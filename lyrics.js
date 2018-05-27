@@ -26,10 +26,14 @@ function showJSON(){
             var first = data.songs[0];
             var three = data.songs[2];
             var second = data.songs[1];
-            $("#f_n").text(first.name);
-            $("#f_r").text(first.ref);
-            $("#f_d").text(first.year);
-            console.log(data);
+            $("#f_n").html(first.name);
+            $("#f_r").html(first.ref);
+            $("#f_d").html(first.year);
+            console.log(data.songs[0]);
+            console.log(first);
+            console.log(first.name);
+            
+            console.log(first.year);
             // console.log(data);
         }
     })
