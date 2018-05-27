@@ -15,7 +15,19 @@ function showLyrics( name ){
     oleg();
 
 }
+showJSON()
+function showJSON(){
+    $.ajax({
+        url: "./src/songs.json",
+        crossDomain: true,
+        contentType: "json",
+        success: function(data){
 
+            console.log(data);
+            // console.log(data);
+        }
+    })
+}
 function show (name, data){
     var select = "#"+name.toString();
     $(select).removeClass("hidden");

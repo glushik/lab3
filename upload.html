@@ -43,13 +43,20 @@
         </form>
         <div class = "flex">
             <div>Намалюйте Лолега Винника</div>
-            <div><canvas id ="draw" width=250 height=250></canvas></div>
+            <input type="color"  class="js-color-picker">
+            <div class = "inline">
+                <input type="range" class="js-line-range" min="1" max="72" value="1">
+                <label class="js-range-value">1</label>Px
+            </div>
+            <canvas class="js-paint  paint-canvas" width="250px" height="250px"></canvas>
         </div>
         <div>
             <form class = "sent" onsubmit="return bestSong();">
  
                 <div>Ваш e-mail:<input type =  "email" id = "email"></div>
                 <!-- <div>Ваш логин:<input type = "text"></div> -->
+                <div>Дата рождения<input type="date" name = "birth"></div>
+
                 <div>Ваша любимая песни Винника:
                     <p><input type = "radio" name ="song" value = "Счастье">Счастье</p>
                     <p><input type = "radio" name ="song" value = "Нино">Нино</p>
@@ -68,7 +75,7 @@
     </div>
     <canvas id = "clock" width=150 height=150></canvas>
     <script src="draw.js"></script>
-
+    
 </body>
 </html>
 

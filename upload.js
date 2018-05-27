@@ -74,3 +74,5 @@ function showSong(){
     alert(JSON.parse(localStorage.getItem(email)).song+" - это ваша любимая песня");
     return false;
 }
+
+
