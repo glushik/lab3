@@ -25,8 +25,10 @@ function showJSON(){
         crossDomain: true,
         contentType: "application/json",
         success: function(data){
-            data = JSON.parse(data);
+            
             console.log(data);
+            data = JSON.parse(data);
+            
             return;
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
