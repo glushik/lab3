@@ -27,6 +27,7 @@ function showJSON(){
         success: function(data){
             data = JSON.parse(data);
             console.log(data);
+            return;
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
             document.getElementById("f_d").innerHTML = first.year;
