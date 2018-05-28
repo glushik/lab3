@@ -23,7 +23,7 @@ function showJSON(){
     $.ajax({
         url: "./src/songs.json",
         crossDomain: true,
-        contentType: "application/json",
+        contentType: "application/json; charset =utf-8",
         success: function(data){
             
             data = data["songs"];
@@ -33,11 +33,20 @@ function showJSON(){
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
             document.getElementById("f_d").innerHTML = first.year;
-            console.log(data.songs[0]);
+
+            var first = data[0][2];
             console.log(first);
-            console.log(first.name);
-            
-            console.log(first.year);
+
+            document.getElementById("s_n").innerHTML = first.name;
+            document.getElementById("s_r").innerHTML = first.ref;
+            document.getElementById("s_d").innerHTML = first.year;
+
+            var first = data[0][3];
+            console.log(first);
+
+            document.getElementById("t_n").innerHTML = first.name;
+            document.getElementById("t_r").innerHTML = first.ref;
+            document.getElementById("t_d").innerHTML = first.year;
             // console.log(data);
         }
     })
