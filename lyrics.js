@@ -26,10 +26,10 @@ function showJSON(){
         contentType: "application/json",
         success: function(data){
             
-            console.log(data["songs"]);
-            data = JSON.parse(data["songs"]);
-            
-            return;
+            data = data["songs"];
+            var first = data[0][1];
+            console.log(first);
+
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
             document.getElementById("f_d").innerHTML = first.year;
