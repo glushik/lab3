@@ -27,21 +27,21 @@ function showJSON(){
         success: function(data){
             
             data = data["songs"];
-            var first = data[0][1];
-            console.log(first);
+            var first = data[0]['1'];
+            // console.log(first);
 
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
             document.getElementById("f_d").innerHTML = first.year;
 
-            var first = data[0][2];
+            var first = data[0]['2'];
             console.log(first);
 
             document.getElementById("s_n").innerHTML = first.name;
             document.getElementById("s_r").innerHTML = first.ref;
             document.getElementById("s_d").innerHTML = first.year;
 
-            var first = data[0][3];
+            var first = data[0]['3'];
             console.log(first);
 
             document.getElementById("t_n").innerHTML = first.name;
