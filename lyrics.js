@@ -26,8 +26,8 @@ function showJSON(){
         contentType: "application/json",
         success: function(data){
             
-            console.log(data);
-            data = JSON.parse(data);
+            console.log(data["songs"]);
+            data = JSON.parse(data["songs"]);
             
             return;
             document.getElementById("f_n").innerHTML = first.name;
