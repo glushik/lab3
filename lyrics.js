@@ -29,7 +29,7 @@ function showJSON(){
             data = data["songs"];
             var first = data['1'];
             // console.log(first);
-            alert(data);
+            console.log(data);
             document.getElementById("f_n").innerHTML = first.name;
             document.getElementById("f_r").innerHTML = first.ref;
             document.getElementById("f_d").innerHTML = first.year;
