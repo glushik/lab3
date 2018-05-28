@@ -27,9 +27,9 @@ function showJSON(){
         success: function(data){
             data = JSON.parse(data);
             console.log(data);
-            document.getElementById("f_n").html(first.name);
-            document.getElementById("f_r").html(first.ref);
-            document.getElementById("f_d").html(first.year);
+            document.getElementById("f_n").innerHTML = first.name;
+            document.getElementById("f_r").innerHTML = first.ref;
+            document.getElementById("f_d").innerHTML = first.year;
             console.log(data.songs[0]);
             console.log(first);
             console.log(first.name);
@@ -40,13 +40,14 @@ function showJSON(){
     })
 }
 function show (name, data){
+
     var select = document.getElementById(name.toString());
     select.classList.remove("hidden");
     select.classList.add("poem");
     data=data.split("#").join("<br />");
     // console.log(data);
-
-    select.html(data);
+    
+    select.innerHTML = data;
 
     // for (var str in data){
     //     console.log(str);
