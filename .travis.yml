@@ -3,7 +3,7 @@ deploy:
   provider: s3
   access_key_id: AKIAI7FVPLJBUEWDKRLQ
   secret_access_key: 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
-  bucket: 3lab
+  bucket: git-to-amazon-s3-outputbucket-2d5ah8mghcn6
   on:
     repo: glushik/lab3
   acl: public_read
