@@ -120,3 +120,6 @@ button{
     outline: none;
     cursor: pointer;
 }
+.hidden{
+    display: none;
+}

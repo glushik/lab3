@@ -87,8 +87,10 @@
         </p>
     </article>
     <div class = "video"></div>
-    <video width="320" height="240" controls>
-        <source src="nino.mp4" type="video/mp4">
+    <button onclick = "showVideo()" id ="showV">Показать видео</button>
+    <progress value="0" max = "100" id = "prog"></progress>
+    <video width="480" height="320" controls class="hidden" id ="vid">
+        <!-- <source src="nino.mp4" type="video/mp4"> -->
     </video>
     <script src="start.js"></script>
 
