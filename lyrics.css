@@ -97,3 +97,9 @@ button{
     display: flex;
     flex-direction: column;
 }
+.pretty{
+    outline: fuchsia;
+    width: 150px;
+    margin: 0 auto;
+    border: 1px solid firebrick !important;
+}

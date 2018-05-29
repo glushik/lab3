@@ -51,7 +51,7 @@ function showJSON(){
         }
     })
 }
-function showJSON(){
+function showJS(){
     document.getElementById("JSON").classList.remove("hidden");
     document.getElementsById("JSONBUT").classList.add("hidden");
 }
