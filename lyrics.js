@@ -18,6 +18,26 @@ function showLyrics( name ){
     oleg();
 
 }
+var lol = document.getElementById('XMLBUT');
+var kek = XMLHttpRequest();
+    lol.onclick = function () {
+        //запрос для xml файла
+        lol.open('GET', 'pesni.xml', false);
+        lol.send();
+        if (lol.status != 200) {//выводим ошибки
+            alert(lol.status + ': ' + lol.statusText);
+        } else {
+            var i,
+                //создаём тамблицу для полученных данных
+                xmlDoc = lol.responseXML,
+                table = '<tr><th>Счастье</th><th>Волчица</th><th>Нино</th></tr>',
+                x = xmlDoc.getElementsByTagName('song');
+            for (i = 0; i < x.length; i++) {
+                table += '<tr><td>' + x[i].getElementsByTagName('name')[0].childNodes[0].nodeValue + '</td><td>' + x[i].getElementsByTagName('ref')[0].childNodes[0].nodeValue + '</td><td><a class="ulightbox" href="' + x[i].getElementsByTagName('year')[0].childNodes[0].nodeValue + '" title="Нажмите, чтобы скачать">тут</a></td></tr>';
+            }
+            document.getElementById('kek').innerHTML = table;//выводим таблицу
+        }
+    };
 showJSON();
 function showJSON(){
     $.ajax({
