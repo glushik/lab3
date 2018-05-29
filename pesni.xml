@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<songs>
+  <song>
+    <name>Счастье</name>
+  <ref>https://www.youtube.com/watch?v=n8fUyiMAPJw</ref>
+  <year>2015</year>
+  </song>
+<song>
+    <name>Волчица</name>
+  <ref>https://www.youtube.com/watch?v=YvFwjiJPVEA</ref>
+<year>2014</year>  
+</song>
+<song>
+    <name>Нино</name>
+<year>2017</year>
+  <ref>https://www.youtube.com/watch?v=TVxFtpHM3IE</ref>
+  </song>
+</songs>

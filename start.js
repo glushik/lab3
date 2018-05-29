@@ -1,5 +1,6 @@
 function scroll_to_top(){
-    $("html,body").animate({"scrollTop":0}, 650);
+    window.scroll({top: 0, behavior: 'smooth'});
+    // $("html,body").animate({"scrollTop":0}, 650);
 }
 // showVideo();
 function showVideo(){
@@ -15,9 +16,9 @@ function showVideo(){
     })
 }
 function show(data){
-    $("#showV").addClass("hidden");
-    $("#prog").addClass("hidden");
-    $("#vid").removeClass("hidden");
+    document.getElementById("showV").classList.add("hidden");
+    document.getElementById("prog").classList.add("hidden");
+    document.getElementById("vid").classList.remove("hidden");
 
 }
 

@@ -1,12 +1,14 @@
 function scroll_to_top(){
-    $("html,body").animate({"scrollTop":0}, 650);
+    window.scroll({top: 0, behavior: 'smooth'});
 }
 function dropHandler(ev){
     ev.stopPropagation();
     ev.preventDefault();
     var file = ev.dataTransfer.files[0];
     //console.log(file);
-    $("#reset").trigger('click');
+    // document.getElementById("reset").createEvent()
+    // .('click');
+    document.forms["ff"].reset();
     showInfo(file);
     if ( file.type.match(/image\/(jpeg|jpg|png|gif)/))  showThumbnail(file);
 
@@ -19,9 +21,14 @@ function showThumbnail(data){
         // var itemPreview = itemPreviewTemplate.clone();
         // var itemPreview;
         // $("#thumbnails-zone").attr('src',event.target.result);
-        $("#thumbnails-zone").html("");
+        var zz = document.getElementById("thumbnails-zone");
+        //zz.innerHTML ="";
         // $("#drop-info").html("");
-        $("#thumbnails-zone").append("<img class='small' src = "+event.target.result+">");
+        var p = new Image();
+        p.classList.add('small');
+        p.src = URL.createObjectURL( data);
+        zz.appendChild(p);
+        // zz.append("<img class='small' src = "+event.target.result.readAsDataURL+">");
         // itemPreview.data('id', data.name)
     });
     reader.readAsDataURL(data);
@@ -37,16 +44,22 @@ function dragOverHandler(ev){
 
 function showInfo(data){
     console.log(data);
-    $("#drop-info").removeClass("hidden");
-    $("#drop-info").html("");
-    $("#thumbnails-zone").html("");
-    $("#drop-info").append("<p>File name:"+data.name+"</p>");
-    $("#drop-info").append("<p>File type:"+data.type+"</p>");
-    $("#drop-info").append("<p>File size:"+data.size+"</p>");
+    var di = document.getElementById("drop-info");
+    di.classList.remove("hidden");
+    di.innerHTML = "";
+    document.getElementById("thumbnails-zone").innerHTML = "";
+    //var ab = document.createElement('p').value = "File name:"+data.name+"\r\n" + "File type:"+data.type+'\r\n' +"File size:"+data.size+"byte"+'\r\n';
+    di.innerText = "File name:"+data.name+"\r\n" + "File type:"+data.type+'\r\n' +"File size:"+data.size+"byte"+'\r\n';
+    
+    //di.append(ab);
+    // di.append(document.createElement("p").innerHTML = "File type:"+data.type+"</p>");
+    //  di.append("<p>File size:"+data.size+"</p>");
 }
-function uploadFile(){
-    $('input[type=file]')[0].files[0];  
-    var data = $('#choose-file')[0].files[0];
+function uploadFile(data){
+    data = data[0];
+    // document.getElementsByTagName('input[type=file]')[0];  
+    // var data = document.getElementsByName("choose-file1").file;
+    console.log(data);
     showInfo(data);
     if (data.type.substring(0,5) ==="image" ) showThumbnail(data);
 }

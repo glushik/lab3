@@ -14,10 +14,10 @@
     <header>
         <img src="./src/images/v.png" alt="logo"/>
         <a href="./index.html">
-            <button id ="about">Про Олега Винника</button>
+            <button id ="about">Про Винника</button>
         </a>
             <a href="./lyrics.html">
-            <button id ="lyrics">Тексти пісень Винника</button>
+            <button id ="lyrics">Тексти пісень </button>
         </a>
         <a href = "upload.html">
             <button id ="upload">Пісні</button>
@@ -36,9 +36,9 @@
             <img src = "" class = "thumb">
         </div>    
         </div>
-        <form onsubmit="return false;" >
-            <input id = "choose-file" type = "file"  multiple onchange="uploadFile()" >
-            <input id = "reset" type="reset" class = "none">
+        <form id ="ff" onsubmit="return false;" >
+            <input name = "choose-file1" type = "file" onchange="uploadFile(this.files)" >
+            <input id = "ff" type="reset" class = "none">
         </form>
         <div class = "flex">
             <div>Намалюйте Лолега Винника</div>
