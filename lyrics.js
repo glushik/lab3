@@ -70,6 +70,57 @@ function show (name, data){
     //     $(select).append("<p class = 'evr'>"+str+"</p>");
     // }
 }
+function crXMLHttpRequest() {
+    var res = false;
+    if (window.XMLHttpRequest) {
+        res = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        if (new ActiveXObject("Microsoft.XMLHTTP")) {
+            res = new ActiveXObject("Microsoft.XMLHTTP");
+        } else if (new ActiveXObject("Msxml2.XMLHTTP")) {
+            res = new ActiveXObject("Msxml2.XMLHTTP");
+        } else {
+            res = false;
+            // alert("РќРµРІРѕР·РјРѕР¶РЅРѕ РѕС‚РїСЂР°РІРёС‚СЊ Р·Р°РїСЂРѕСЃ!");
+        }
+    }
+    return res;
+}
+function showXML(){
+
+    var xhttp2 = crXMLHttpRequest();
+    c.onclick = function (){
+        xhttp2.open("GET", 'forajax/pesni.xml', false);
+        xhttp2.send();
+        var xmlDoc = xhttp2.responseXML;
+        var x = xmlDoc.getElementsByTagName("song");
+        alert(x);
+        // data.getElementsByTagName("")
+            // console.log(first);
+            // console.log(data);
+            document.getElementById("f_n").innerHTML = first.name;
+            document.getElementById("f_r").innerHTML = first.ref;
+            document.getElementById("f_d").innerHTML = first.year;
+
+            var first = data[1][2];
+            console.log(first);
+
+            document.getElementById("s_n").innerHTML = first.name;
+            document.getElementById("s_r").innerHTML = first.ref;
+            document.getElementById("s_d").innerHTML = first.year;
+
+            var first = data[2][3];
+            console.log(first);
+
+            document.getElementById("t_n").innerHTML = first.name;
+            document.getElementById("t_r").innerHTML = first.ref;
+            document.getElementById("t_d").innerHTML = first.year;
+    }
+            
+            
+            // console.log(data);
+        
+}
 function oleg(){
     document.getElementById("loleg").classList.remove("hidden");
     animate(function(timePassed){
