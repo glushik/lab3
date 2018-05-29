@@ -22,7 +22,7 @@ var butjson = document.getElementById('JSONBUT'),
 reqjson = new XMLHttpRequest();
 butjson.onclick = function () {
 //запрос для json файла
-reqjson.open('GET', 'songs.json', false);
+reqjson.open('GET', 'src/songs.json', false);
 reqjson.send();
 if (reqjson.status != 200) {//выводим ошибки
     alert(reqjson.status + ': ' + reqjson.statusText);
