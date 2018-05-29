@@ -35,7 +35,7 @@ if (reqjson.status != 200) {//выводим ошибки
     }
     table += '</tr>';
     for (name in documjson['1']) {
-        table += '<tr><td>' + documjson['1'][name] + '</td><td>' + documjson['2'][name] + '</td><td>' + documjson['3'][name] + '</td><tr>';//создаём таблицу для полученных данных
+        table += '<tr><td>' + documjson['1'][name] + '</td><td>' + documjson['2'][name] + '</td><td>' + documjson['3'][name] + '</td></tr>';//создаём таблицу для полученных данных
         i++;
     }
     document.getElementById('tabforjson').innerHTML = table;//выводим результат
