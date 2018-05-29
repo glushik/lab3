@@ -81,7 +81,6 @@ function crXMLHttpRequest() {
             res = new ActiveXObject("Msxml2.XMLHTTP");
         } else {
             res = false;
-            // alert("РќРµРІРѕР·РјРѕР¶РЅРѕ РѕС‚РїСЂР°РІРёС‚СЊ Р·Р°РїСЂРѕСЃ!");
         }
     }
     return res;
@@ -89,7 +88,7 @@ function crXMLHttpRequest() {
 function showXML(){
 
     var xhttp2 = crXMLHttpRequest();
-    c.onclick = function (){
+   
         xhttp2.open("GET", 'forajax/pesni.xml', false);
         xhttp2.send();
         var xmlDoc = xhttp2.responseXML;
@@ -115,7 +114,7 @@ function showXML(){
             document.getElementById("t_n").innerHTML = first.name;
             document.getElementById("t_r").innerHTML = first.ref;
             document.getElementById("t_d").innerHTML = first.year;
-    }
+    
             
             
             // console.log(data);
