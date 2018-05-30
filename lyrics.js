@@ -2,17 +2,20 @@ function scroll_to_top(){
     window.scroll({top: 0, behavior: 'smooth'});
 }
 function showLyrics( name ){
+    fetch("/src/lyrics/"+name+".txt").then(function(data){
+        alert(data.text);
+    });
+    // $.ajax({
+    //     url: "./src/lyrics/"+name+".txt",
+    //     crossDomain: true,
+    //     contentType: "text/html;charset=utf-8",
+    //     success: function(data){
 
-    $.ajax({
-        url: "./src/lyrics/"+name+".txt",
-        crossDomain: true,
-        contentType: "text/html;charset=utf-8",
-        success: function(data){
+    //         show (name, data)
+    //         // console.log(data);
+    //     }
+    // })
 
-            show (name, data)
-            // console.log(data);
-        }
-    })
     //  show("happiness", "lollosdfjk#sdjfknsdf\nsdf,#sbdfbsdf,ns#dfsl\nsdf,h#sdkfjblfjsdf");
 
     oleg();
